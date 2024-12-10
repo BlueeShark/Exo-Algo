@@ -6,7 +6,7 @@
 	"type": "module",
 	"scripts": {
 		"test": "NODE_OPTIONS='--experimental-vm-modules' jest --silent",
-		"start": "nodemon index.js",
+		"poulet": "nodemon index.js",
 		"format": "npx @biomejs/biome format --write './'",
 		"lint": "npx @biomejs/biome lint --write './'"
 	},
