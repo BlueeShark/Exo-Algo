@@ -223,9 +223,9 @@ console.info(
 // Deux chaînes sont des anagrammes si elles contiennent les mêmes caractères, quel que soit l'ordre.
 // Exemple : anagram("listen", "silent") // true
 
-// export const anagram = () => {}
+export const anagram = (a, b) => a.split('').sort().join('') === b.split('').sort().join('')
 
-// console.info("Exercice 21 : ", anagram("listen", "silent"));
+console.info("Exercice 21 : ", anagram("listen", "silent"));
 
 //----------------------------------------------------------------------------------------------//
 // EXERCICE 22
@@ -233,9 +233,9 @@ console.info(
 // Écrivez une fonction qui enlève les doubles lettres d'une chaîne donnée.
 // Exemple : removeDoubleLetters("google") // "gogle"
 
-// export const removeDoubleLetters = () => {}
+export const removeDoubleLetters = (a) => a.split('').filter((char, index, array) => char !== array[index+1]).join('')
 
-// console.info("Exercice 22 : ", removeDoubleLetters("google"));
+console.info("Exercice 22 : ", removeDoubleLetters("google"));
 
 //----------------------------------------------------------------------------------------------//
 
@@ -243,13 +243,12 @@ console.info(
 // Écrivez une fonction qui prend un tableau de 10 entiers (entre 0 et 9) et renvoie une chaîne de caractères sous la forme d'un numéro de téléphone.
 // Exemple : createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]) // "(123) 456-7890"
 
-// export const createPhoneNumber = () => {
-//    };
+export const createPhoneNumber = (a) => `(${a.slice(0, 3).join('')}) ${a.slice(3, 6).join('')}-${a.slice(6, 10).join('')}`
 
-// console.info(
-// 	"Exercice 23 : ",
-// 	createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]),
-// );
+console.info(
+	"Exercice 23 : ",
+	createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]),
+);
 
 //----------------------------------------------------------------------------------------------//
 // EXERCICE 24
@@ -257,11 +256,10 @@ console.info(
 // Écrivez une fonction nommée "findMissingLetter" qui prend en paramètre un tableau d'une série de lettres et qui renvoie la lettre manquante de la série.
 // Exemple : findMissingLetter(["a", "b", "c", "d", "f"]) // "e"
 
-// export const findMissingLetter = () => {
+export const findMissingLetter = (letter) => String.fromCharCode(letter.join('').charCodeAt(letter.findIndex((char, i) => i < letter.length && letter[i+1].charCodeAt(0) - char.charCodeAt(0) > 1)) +1);
 
-// };
 
-// console.info("Exercice 24 : ", findMissingLetter(["a", "b", "c", "d", "f"]));
+console.info("Exercice 24 : ", findMissingLetter(["a", "b", "c", "d", "f"]));
 
 //----------------------------------------------------------------------------------------------//
 
